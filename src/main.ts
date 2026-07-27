@@ -10,9 +10,9 @@ import { CommandHandler } from "./handlers/command-handler";
 import { RibbonHandler } from "./handlers/ribbon-handler";
 
 export default class TomorrowsDailyNote extends Plugin {
-  settings: TomorrowsDailyNoteSettings;
-  commandHandler: CommandHandler;
-  ribbonHandler: RibbonHandler;
+  settings!: TomorrowsDailyNoteSettings;
+  commandHandler!: CommandHandler;
+  ribbonHandler!: RibbonHandler;
 
   async onload() {
     await this.loadSettings()

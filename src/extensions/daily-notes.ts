@@ -27,7 +27,7 @@ export async function openNextDailyNote(options: OpenNextDailyNoteOptions): Prom
 async function getOrCreateNextDailyNote(date: moment.Moment): Promise<TFile | void> {
   let nextDailyNote = getDailyNote(date, getAllDailyNotes())
   if (!nextDailyNote) {
-    nextDailyNote = await createDailyNote(date)
+    nextDailyNote = await createDailyNote(date) as TFile
   }
 
   return nextDailyNote
