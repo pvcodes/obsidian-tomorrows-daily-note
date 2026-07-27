@@ -1,0 +1,10 @@
+{
+	"id": "advanced-daily-note-planner",
+	"name": "Advanced Daily Note Planner",
+	"version": "1.0.0",
+	"minAppVersion": "1.1.0",
+	"description": "Plan ahead with custom offsets - create daily notes days in advance with weekend skipping.",
+	"author": "pvcodes",
+	"authorUrl": "https://github.com/pvcodes",
+	"isDesktopOnly": false
+}
