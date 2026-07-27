@@ -25,7 +25,7 @@ export class TomorrowsDailyNoteSettingTab extends PluginSettingTab {
     containerEl.empty();
 
     new Setting(containerEl)
-      .setName("Skip Weekends")
+      .setName("Skip weekends")
       .setDesc("Skip weekends when opening tomorrow's daily note")
       .addToggle((toggle) =>
         toggle
@@ -37,7 +37,7 @@ export class TomorrowsDailyNoteSettingTab extends PluginSettingTab {
       );
 
     new Setting(containerEl)
-      .setName("Default Offset")
+      .setName("Default offset")
       .setDesc("Number of days ahead to create by default (e.g., 2 = day after tomorrow)")
       .addText((text) =>
         text

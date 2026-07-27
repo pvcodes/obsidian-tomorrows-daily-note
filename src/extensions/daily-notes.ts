@@ -19,18 +19,21 @@ export async function openNextDailyNote(options: OpenNextDailyNoteOptions): Prom
   if (!validateDailyNotesPluginLoaded()) return;
 
   const date = getNextDailyNoteDate({ skipWeekends, offset });
-  const note = await getOrCreateNextDailyNote(date)
+  const note = await getOrCreateNextDailyNote(date);
   
-  if (note) openNote(note, newTab);
+  if (note) await openNote(note, newTab);
 }
 
 async function getOrCreateNextDailyNote(date: moment.Moment): Promise<TFile | void> {
-  let nextDailyNote = getDailyNote(date, getAllDailyNotes())
+  let nextDailyNote = getDailyNote(date, getAllDailyNotes());
   if (!nextDailyNote) {
-    nextDailyNote = await createDailyNote(date) as TFile
+    const created = await createDailyNote(date);
+    if (created instanceof TFile) {
+      nextDailyNote = created;
+    }
   }
 
-  return nextDailyNote
+  return nextDailyNote;
 }
 
 async function openNote(file: TFile, newTab: boolean): Promise<void> {

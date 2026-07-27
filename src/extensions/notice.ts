@@ -1,5 +1,5 @@
 import { Notice } from "obsidian";
 
 export function triggerDailyNotesDependencyNotice() {
-  new Notice('Please enable the "Daily Notes" plugin to use the "Tomorrow\'s Daily Note" plugin.')
+  new Notice('Please enable the "daily notes" plugin to use the "advanced daily note planner" plugin.');
 }

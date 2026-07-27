@@ -27,7 +27,7 @@ export default class TomorrowsDailyNote extends Plugin {
   }
 
   async loadSettings() {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData() as TomorrowsDailyNoteSettings);
     this.addSettingTab(new TomorrowsDailyNoteSettingTab(this.app, this));
   }
 

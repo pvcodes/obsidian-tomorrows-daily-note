@@ -20,16 +20,16 @@ export class CommandHandler {
       name: 'Open tomorrow\'s daily note',
       checkCallback: (checking: boolean) => {
         if (!checking) {
-          openNextDailyNote({
+          void openNextDailyNote({
             skipWeekends: this.plugin.settings.skipWeekends,
             newTab: this.useNewTab(),
             offset: this.plugin.settings.defaultOffset
           });
         }
 
-        return true
+        return true;
       }
-    })
+    });
 
     this.plugin.addCommand({
       id: 'create-multiple-future-daily-notes',
@@ -38,7 +38,7 @@ export class CommandHandler {
         if (!checking) {
           new FutureNotesModal(this.plugin.app, (result) => {
             for (let i = 0; i < result; i++) {
-              openNextDailyNote({
+              void openNextDailyNote({
                 skipWeekends: this.plugin.settings.skipWeekends,
                 newTab: this.useNewTab(),
                 offset: i + 1
@@ -47,9 +47,9 @@ export class CommandHandler {
           }).open();
         }
 
-        return true
+        return true;
       }
-    })
+    });
   }
 
   tearDown() {
